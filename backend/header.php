@@ -9,11 +9,11 @@
             <ul class="menu">
                 <li class="activado"><a href=""><i class="icono izquierda fa fa-music" aria-hidden="true"></i>Discos<i class="icono derecha fa fa-chevron-down"></i></a>
                     <ul>
-                        <li><a href="discos.php"><i class="icono izquierda fa fa-plus"></i>Agregar Discos</a></li>
+                        <li><a href="agregar_discos.php"><i class="icono izquierda fa fa-plus"></i>Agregar Discos</a></li>
                         <li><a href=""><i class="icono izquierda fa fa-list"></i>Listado de Discos</a></li>
                     </ul>
                 </li>
-                <li><a href="bandas.php"><i class="icono izquierda fa fa-users"></i>Bandas</a></li>
+                <li><a href="agregar_bandas.php"><i class="icono izquierda fa fa-users"></i>Bandas</a></li>
                 <li><a href=""><i class="icono izquierda fa fa-headphones"></i>Generos</a></li>
                 <li><a href="salir.php"><i class="icono izquierda fa fa-sign-out"></i>Salir</a></li>
             </ul>

@@ -12,6 +12,7 @@ $res2 = $con->query($sql2);
         <title>Agregar Discos</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="css/background.css">
+        <link rel="stylesheet" href="css/estilos.css">
         <script TYPE="text/javascript">
             window.onload = function () {
                 document.formularioContacto.nombre.focus();
@@ -36,61 +37,25 @@ $res2 = $con->query($sql2);
             }
 
         </script>
-        <style>
-            #contenedor{
-                width: 500px;
-                height: 500px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-top: -250px;
-                margin-left: -250px;
-            }
-
-            label{
-                font-weight: bold;
-                color: #ffff33;
-                font-size: 14px;
-            }
-
-            input{
-                font-size: 14px;
-            }
-
-            input[type="text"]
-            {
-                margin: 10px 0;
-                background: #fff;
-                border: 1px solid #ccc;
-                color: #777;
-                display: block;
-                max-width: 100%;
-                outline: none;
-                padding: 7px 8px;
-            }
-            
-            legend{
-                color: #ffff33;
-            }
-        </style>
+       
     </head>
     <body class="bdback">
         <div id="contenedor">
             <form name="formularioContacto" action="../consultas/guardar_discos.php" method="POST" enctype="multipart/form-data">  
                 <fieldset>
                     <legend> Agregar Nuevos Discos </legend>
-                    <label>Nombre: </label>
-                    <input type="text" name="dnombre" id="nombre">
-                    <label>Año: </label>
-                    <input type="text" name="danio">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" class="form-control" name="dnombre" id="nombre" placeholder="Nombre del Disco">
+                    <label for="anio">Año: </label>
+                    <input type="text" name="danio" id="anio">
                     <label>Banda: </label>
-                    <select name="banda">
+                    <select class="form-control" name="banda">
                         <?php foreach ($res2 as $r2) { ?>
                             <option value="<?php echo $r2['id'] ?>"><?php echo $r2['banda'] ?></option>
                         <?php } ?>
                     </select>
-                    <label>Reseña: </label>
-                    <input type="text" name="dresenia">
+                    <label for="resenia">Reseña: </label>
+                    <input type="text" name="dresenia" id="resenia">
                     <label>Genero: </label>
                     <select name="genero">
                         <?php foreach ($res as $r) { ?>
@@ -101,10 +66,10 @@ $res2 = $con->query($sql2);
                     <input type="file" name="portada">
                     <label>Enlace: </label>
                     <input type="text" name="denlace">
-                    <button type="submit" onclick="validarFormulario">Guardar Disco</button>
+                    <button type="submit" class="btn btn-default" onclick="validarFormulario">Guardar Disco</button>
                 </fieldset>
             </form>
-            <a href="../inicio.php">Atras</a>
+            <a href="../inicio.php" id="atras"><button class="btn btn-success">Atras</button></a>
         </div>
     </body>
 </html>

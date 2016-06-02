@@ -2,7 +2,7 @@
 <?php
 include("header.php");
 require_once 'consultas/conexion.php';
-$sql = "select * from discos inner join bandas on discos.banda = bandas.id order by nombre DESC";
+$sql = "select * from discos inner join bandas on discos.banda = bandas.id INNER JOIN generos on discos.genero = generos.id order by nombre desc";
 $res = $con->query($sql);
 if ($_SESSION['usuario']) {
     ?>
@@ -45,6 +45,7 @@ if ($_SESSION['usuario']) {
             <div id="contenedor54"> 
                 <?php while ($reg = mysqli_fetch_array($res, MYSQLI_ASSOC)) { ?>
                     <p class="titdis"> <?php echo "Album: ", $reg['nombre']; ?></p>
+                    <p class="titdis"> <?php echo "Genero: ", $reg['genero']; ?></p>
                     <p class="titdis"> <?php echo "Fecha: ", $reg['anio'] ?></p>
                     <p class="titdis"> <?php echo "Banda: ", $reg['banda'] ?></p>
                     <img src="uploads/<?php echo $reg['portada']; ?>" alt="<?php echo $reg['nombre'] ?>" width="320" height="240">

@@ -55,7 +55,7 @@ $ar = $res->num_rows;
                     <li><a class="enlace" href="bienvenido.php">Inicio</a></li>
                     <li><a class="enlace" href="inicio.php">Música</a></li>
                     <?php if ($ar > 0) { ?>
-                        <li><a class="enlace" href="backend/discos.php">Agregar Música</a></li>
+                        <li><a class="enlace" href="backend/agregar_discos.php">Agregar Música</a></li>
                         <?php } ?>
                     <li><a class="enlace" href="salir.php">Salir</a></li>
                 </ul>
